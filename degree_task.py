@@ -20,4 +20,3 @@ def degree(time: float, acc: float, rad: float, vel: float) -> int:
     turn = way / lenght
     circle = 360
     return int(circle * (abs(floor(turn) - turn)))
-

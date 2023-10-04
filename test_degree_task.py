@@ -2,7 +2,7 @@
 
 import pytest
 
-from ball import degree
+from degree_task import degree
 
 test = (
     ((4, 3, 4, 12), 311),
@@ -21,4 +21,3 @@ def test_degree(source: tuple[float], expected: int):
         expected (int): expected values.
     """
     assert degree(*source) == expected
-
