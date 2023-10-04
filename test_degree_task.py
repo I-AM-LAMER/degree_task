@@ -1,22 +1,23 @@
-"""Test module."""
+"""Test."""
 
 import pytest
 
 from degree_task import degree
 
-test_data = (
-    ((10, 3, 5, 1), 34.39),
-    ((15, 6, 2), 267.13),
-    ((100, 200, 33, 15), 202.06),
+test = (
+    ((4, 3, 4, 12), 311),
+    ((1, 2, 4, 2), 42),
+    ((8, 3, 7, 0), 65),
+    ((0, 3, 7, 0), 0),
 )
 
 
-@pytest.mark.parametrize('source, expected', test_data)
-def test_degree(source: tuple[float], expected: float):
+@pytest.mark.parametrize('source, expected', test)
+def test_degree(source: tuple[float], expected: int):
     """Test function.
 
     Args:
         source (tuple[float]): data for test.
-        expected (float): expected values.
+        expected (int): expected values.
     """
     assert degree(*source) == expected

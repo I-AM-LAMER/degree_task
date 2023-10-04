@@ -1,24 +1,22 @@
-"""Count module."""
+"""Count angle of deflection."""
 
 from math import floor, pi
 
 
-def degree(time: float, acc: float, rad: float, vel: float = 0):
-    """Count deflection angle.
+def degree(time: float, acc: float, rad: float, vel: float) -> int:
+    """Count angle.
 
     Args:
         time (float): time
         acc (float): acceleration
         rad (float): radius
-        vel (float): velocity. Defaults to 0.
+        vel (float): speed
 
     Returns:
-        angle(float): deflection angle. round by 2.
+        (int): result.
     """
-    round_deg = 360
-    lenght = 2 * round(pi, 2) * rad
-    path = vel * time + (acc * time ** 2) / 2
-    turn = path / lenght
-    angle = round_deg * (abs(floor(turn) - turn))
-
-    return round(angle, 2)
+    lenght = 2 * pi * rad
+    way = vel * time + acc * time ** 2 / 2
+    turn = way / lenght
+    circle = 360
+    return int(circle * (abs(floor(turn) - turn)))
